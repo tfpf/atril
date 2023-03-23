@@ -1236,6 +1236,9 @@ ev_window_init_metadata_with_default_values (EvWindow *window)
 		ev_metadata_set_boolean (metadata, "fullscreen",
 					 g_settings_get_boolean (settings, "fullscreen"));
 	}
+	if (!ev_metadata_has_key (metadata, "window_maximized")) {
+		ev_metadata_set_boolean (metadata, "window_maximized", TRUE);
+	}
 }
 
 static void
